@@ -2,10 +2,12 @@ EGVM disassembler
 =================
 
 This is a prototype of a linear sweep disassembler for [EGVM](http://www.sensepost.com/blog/10067.html "") bytecode.
+
 As a bonus it tries to detect SMC and recover proper JMPs statements.
 
-Instruction set:
 
+Instruction set:
+```
    IP = Instruction Pointer
    SP = Stack Pointer
    LC = Loop Counter
@@ -20,8 +22,8 @@ Instruction set:
    0x6 opcode = {MOV [SP], [SP]-ARG; IP++}
    0xB opcode = PRINT [SP]
    0x9 opcode = DEBUG
+```
 
-I tried to keep it somewhat consistent with x86. All other bytes are treated 
-as data.
+I tried to keep it somewhat consistent with x86. All other bytes are treated as data.
 
 For additional information, please see [my write-up](http://dyjakan.sigsegv.pl "").
