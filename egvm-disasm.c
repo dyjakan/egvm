@@ -26,10 +26,10 @@ Instruction set:
 I tried to keep it somewhat consistent with x86. All other bytes are treated 
 as data.
 
-For additional information, please see my writeup [2].
+For additional information, please see my analysis [2].
 
 [1] http://www.sensepost.com/blog/10067.html
-[2] http://dyjakan.sigsegv.pl
+[2] http://dyjakan.sigsegv.pl/2014/06/01/sensepost-reversing-challenge-analysis/
 */
 
 #include <stdio.h>

@@ -26,4 +26,4 @@ Instruction set:
 
 I tried to keep it somewhat consistent with x86. All other bytes are treated as data.
 
-For additional information, please see [my write-up](http://dyjakan.sigsegv.pl "").
+For additional information, please see [my analysis](http://dyjakan.sigsegv.pl/2014/06/01/sensepost-reversing-challenge-analysis/ "").
