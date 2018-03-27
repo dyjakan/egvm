@@ -1,5 +1,4 @@
-EGVM disassembler
-=================
+# EGVM disassembler
 
 This is a prototype of a linear sweep disassembler for [EGVM](http://www.sensepost.com/blog/10067.html "") bytecode.
 
@@ -7,6 +6,7 @@ As a bonus it tries to detect SMC and recover proper JMPs statements.
 
 
 Instruction set:
+
 ```
    IP = Instruction Pointer
    SP = Stack Pointer
@@ -26,4 +26,4 @@ Instruction set:
 
 I tried to keep it somewhat consistent with x86. All other bytes are treated as data.
 
-For additional information, please see [my analysis](http://dyjakan.sigsegv.pl/2014/06/01/sensepost-reversing-challenge-analysis/ "").
+For additional information, please see [my analysis](analysis.md).
