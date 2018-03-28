@@ -3,6 +3,8 @@ Date: 2014-06-01
 
 Couple of weeks ago I have stumbled upon a [reversing challenge](http://sensepost.com/blog/10067.html) made by [SensePost](http://sensepost.com) earlier this year. I was not able to find any public solutions to it so I thought that it would be interesting to make one. Recently I had some spare time on my hands so I have decided to follow this goal. Enjoy.
 
+NOTE: ([Local copy of binary](reverseme.zip)).
+
 # Initial analysis
 
 After firing up IDA we can quickly pinpoint `main()` function which is located at `0x004016B0` (with base address as `0x00401000`). This binary is not obfuscated nor protected in any way, hence we can immediately spot interesting calls such as `fopen()`, `fgetc()`, `fread()`, and `strncmp()`. We will follow with top-down style analysis.
@@ -382,7 +384,7 @@ C:\Users\ad\Desktop\reverseme>
 
 # For fun and no profit
 
-In conjunction with the above analysis, I have also wrote a simple disassembler for this VM instruction set. As a bonus it tries to detect SMC and recover proper JMPs statements.
+In conjunction with the above analysis, I have also wrote a [simple disassembler](egvm-disasm.c) for this VM instruction set. As a bonus it tries to detect SMC and recover proper JMPs statements.
 
 Instruction set:
 

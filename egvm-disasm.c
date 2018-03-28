@@ -1,4 +1,4 @@
-/* 
+/*
 =============
 egvm-disasm.c
 =============
@@ -23,13 +23,12 @@ Instruction set:
    0xB opcode = PRINT [SP]
    0x9 opcode = DEBUG
 
-I tried to keep it somewhat consistent with x86. All other bytes are treated 
+I tried to keep it somewhat consistent with x86. All other bytes are treated
 as data.
 
-For additional information, please see my analysis [2].
+For additional information, please see README.md
 
 [1] http://www.sensepost.com/blog/10067.html
-[2] http://dyjakan.sigsegv.pl/2014/06/01/sensepost-reversing-challenge-analysis/
 */
 
 #include <stdio.h>
@@ -73,13 +72,13 @@ void loader(char *filename) {
 
 void disasm() {
    int i;
-   
+
    printf("IP:\tSP:\tOPCODES:\tINSTRUCTIONS:\n");
-   
+
    for(i=IP; i<256; i++) {
-      
+
       printf("%#x\t%#x\t%.2x\t\t", i, SP, bytecode[i]);
-      
+
       switch(bytecode[i]) {
          case 0x0:
             printf("BREAK\n");
@@ -100,7 +99,7 @@ void disasm() {
             }
             break;
 
-         /* This additional printing in opcodes 0x3, 0x5, and 0x6 is required 
+         /* This additional printing in opcodes 0x3, 0x5, and 0x6 is required
             if we don't want to confuse second bytes of these instructions with
             other opcodes */
 
@@ -115,7 +114,7 @@ void disasm() {
             }
             break;
 
-         /* These IFs in 0x4, 0x5, and 0x6 are heurestics for detecting LC 
+         /* These IFs in 0x4, 0x5, and 0x6 are heurestics for detecting LC
             change so we can have better disassembly of SMC */
 
          case 0x4:
